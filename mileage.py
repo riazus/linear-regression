@@ -1,4 +1,3 @@
-import sys
 import re
 
 def get_thetas():
@@ -8,21 +7,19 @@ def get_thetas():
             for line in file:
                 lines.append(line)
     except:
-        # print("thetas.txt is not found !")
-        # print("Thetas in file are wrong ! Program is using 0 instead")
-        return (0, 0)
+        return
 
     if len(lines) != 2:
         print("thetas.txt has an error")
         print("Thetas in file are wrong ! Program is using 0 instead")
-        return (0, 0)
+        return
 
     try:
         thetaZero = float(re.search(r'(?<=:)(.*?)(?=\n)', lines[0]).group(1))
         thetaOne = float(re.search(r'(?<=:)(.*?)(?=\n)', lines[1]).group(1))
     except:
         print("Thetas in file are wrong ! Program is using 0 instead")
-        return (0, 0)
+        return
 
     return (thetaZero, thetaOne)
 
