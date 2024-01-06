@@ -1,4 +1,4 @@
-V_PY		= py
+V_PY		= python
 
 training:
 		$(V_PY) linear_regression.py
@@ -10,5 +10,5 @@ precise:
 		$(V_PY) linear_regression.py -p
 predict:
 		$(V_PY) mileage.py
-clean:
+reset:
 		$(V_PY) linear_regression.py -c

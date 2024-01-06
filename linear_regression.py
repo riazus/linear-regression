@@ -10,6 +10,11 @@ def write_to_txt(theta0, theta1):
     f.write(f"Theta0:{theta0}\nTheta1:{theta1}\n")
     f.close()
 
+def reset_thetas():
+    f = open("thetas.txt", "w")
+    f.write(f"Theta0:0\nTheta1:0\n")
+    f.close()
+
 def parse_csv():
     data_list = []
     with open('data.csv', newline='') as csvfile:
@@ -27,7 +32,7 @@ def estimate_precision(theta0, theta1, data_dict):
 
 def main():
     if len(sys.argv) > 1 and sys.argv[1] == "-c":
-        open("thetas.txt", "w").close()
+        reset_thetas()
         return
         
     data_dict = parse_csv()
